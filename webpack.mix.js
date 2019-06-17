@@ -21,4 +21,5 @@ mix.styles(['resources/plantilla/css/font-awesome.min.css',
              'resources/plantilla/js/pace.min.js',
              'resources/plantilla/js/popper.min.js',
              'resources/plantilla/js/template.js'],
-             'public/js/plantilla.js');
+             'public/js/plantilla.js')
+.js(['resources/js/app.js'],'public/js/app.js');

@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,7 +35,6 @@ Route::get('/Principal', function () {
 });
 
 
-
 #Nickname opcional
 Route::get('/practica3/{name}', function ($name) {
     return view('practica3/'.$name);
@@ -44,4 +43,19 @@ Route::get('/practica3/{name}', function ($name) {
 #Nickname opcional
 Route::get('/{name}', function ($name) {
     return view('principal/'.$name);
+});
+*/
+Route::get('/','ControladorPrincipal@index');
+
+Route::get('/Principal', function () {
+    return view('principal/Contenido');
+});
+
+#Nickname opcional
+Route::get('/{name}', function ($name) {
+    return view('principal/'.$name);
+});
+
+Route::get('/practica3/{name}', function ($name) {
+    return view('practica3/'.$name);
 });

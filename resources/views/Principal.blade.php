@@ -72,81 +72,9 @@
     </header>
 
     <div class="app-body">
-        <div class="sidebar">
-            <nav class="sidebar-nav">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" onclick="ir('Principal')"><i class="icon-speedometer"></i> Escritorio</a>
-                    </li>
-                    <li class="nav-title">
-                        Mantenimiento
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Roles</a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('roles')"><i class="icon-bag"></i> Ver Roles</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('agregarroles')" ><i class="icon-bag"></i> Agregar Rol</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-wallet"></i> Personas</a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('personas')"><i class="icon-wallet"></i> Ver Personas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('agregarpersonas')"><i class="icon-notebook"></i> Agregar Personas</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-basket"></i> Usuarios</a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('usuarios')"><i class="icon-basket-loaded"></i> Ver Usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" onclick="ir('agregarusuarios')"><i class="icon-notebook"></i> Agregar Usuarios</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Acceso</a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link" href="i#"><i class="icon-user"></i> Usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-user-following"></i> Roles</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i> Reportes</a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link" href="i#"><i class="icon-chart"></i> Reporte Ingresos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="icon-chart"></i> Reporte Ventas</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="main.html"><i class="icon-book-open"></i> Ayuda <span class="badge badge-danger">PDF</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="main.html"><i class="icon-info"></i> Acerca de...<span class="badge badge-info">IT</span></a>
-                    </li>
-                </ul>
-            </nav>
-            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-        </div>
-
+       <!-- Aqui va el SIDEBAR -->
+        @include('sidebar.sidebar')
+      <!-- Termina el SIDEBAR -->
         <!-- Aqui va el Contendio -->
         @yield('Contenido')
         <!-- Termina el contendio -->
@@ -161,6 +89,9 @@
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    <script src="js/app.js"></script>
     <script src="js/plantilla.js"></script>
    

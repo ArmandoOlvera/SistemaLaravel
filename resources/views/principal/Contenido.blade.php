@@ -5,7 +5,7 @@
   <example-component></example-component> 
 </template>
 
-
+<!--Aqui va el contenido del menu 1-->
 <template v-if="menu==1">
   <h1>
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaContenidomenu1

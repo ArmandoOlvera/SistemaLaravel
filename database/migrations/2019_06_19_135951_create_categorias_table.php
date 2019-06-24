@@ -13,13 +13,7 @@ class CreateCategoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre',30);
-            $table->string('descripcion',255);
-            $table->boolean('condicion')->default(1);
-            $table->timestamps();
-        });
+        
     }
 
     /**
@@ -29,6 +23,6 @@ class CreateCategoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+       
     }
 }

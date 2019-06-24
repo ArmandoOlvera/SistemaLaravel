@@ -3,7 +3,7 @@
     <ul class="nav">
       
       <li @click="menu=0" class="nav-item">
-        <a class="nav-link active" onclick="ir('Principal')"><i class="icon-speedometer"></i> Escritorio</a>
+        <a class="nav-link active" ><i class="icon-speedometer"></i> Escritorio</a>
       </li>
       
       <li class="nav-title">

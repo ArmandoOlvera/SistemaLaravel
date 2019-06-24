@@ -45,7 +45,11 @@ Route::get('/{name}', function ($name) {
     return view('principal/'.$name);
 });
 */
-Route::get('/','ControladorPrincipal@index');
+Route::get('/','Controller@index');
+
+Route::get('/asd','Controller@index2');
+
+
 
 Route::get('/Principal', function () {
     return view('principal/Contenido');
@@ -58,4 +62,12 @@ Route::get('/{name}', function ($name) {
 
 Route::get('/practica3/{name}', function ($name) {
     return view('practica3/'.$name);
+});
+
+Route::get('/chismografo', function ( ) {
+    return view('chismografo/');
+});
+
+Route::get('/chismografo/{name}', function ($name) {
+    return view('chismografo/'.$name);
 });

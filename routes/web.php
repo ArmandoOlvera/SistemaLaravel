@@ -45,12 +45,36 @@ Route::get('/{name}', function ($name) {
     return view('principal/'.$name);
 });
 */
+
+//RUTA QUE NOS GUIA A LA PAGINA DE INICIO
 Route::get('/','Controller@index');
 
-Route::get('/asd','Controller@index2');
+//RUTA QUE NOS GUIA A LA PANTALLA DE CATEGORIAS
+Route::get('/categoria','categoriacontroller@index');
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE CATEGORIAS PARA GUARDAR DATOS
+Route::post('/categoria/registrar','categoriacontroller@store');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE CATEGORIAS PARA actualizær DATOS
+Route::put('/categoria/actualizar','categoriacontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE CATEGORIAS PARA actualizær DATOS y desactivar la fila
+Route::put('/categoria/desactivar','categoriacontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE CATEGORIAS PARA actualizær DATOS y avticar la fila
+Route::put('/categoria/activar','categoriacontroller@update');
 
 
 
+
+
+
+
+
+////Otras rutas no importantes..../////
 Route::get('/Principal', function () {
     return view('principal/Contenido');
 });

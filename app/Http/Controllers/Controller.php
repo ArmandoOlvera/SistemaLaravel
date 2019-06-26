@@ -7,6 +7,12 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use Illuminate\Http\Request;
+//Mandamos a llamar al controlador de categorias para sus funcionalidades
+use App\Categoria;
+
+
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -15,8 +21,5 @@ class Controller extends BaseController
   public function index(){
     return view('principal/Contenido');
   }
-  
-  public function index2(){
-    return view('principal/personas');
-  }
+   
 }

@@ -21,6 +21,13 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+//Enlace del componente de categorias a su respectiva etiqueta
+//En donde dice 'categoriascomponent' es el nombre de la etiqueta, mientras que './components/CategoriasComponent.vue' es la direccion del componente
+Vue.component('categoriascomponent', require('./components/CategoriasComponent.vue').default);
+
+
+//Enlace del componente de rol a su respectiva etiqueta
+Vue.component('rolcomponent', require('./components/RolComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

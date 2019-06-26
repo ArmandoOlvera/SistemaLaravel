@@ -5,11 +5,9 @@
   <example-component></example-component> 
 </template>
 
-<!--Aqui va el contenido del menu 1-->
+<!--Aqui va el contenido del menu de roles-->
 <template v-if="menu==1">
-  <h1>
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaContenidomenu1
-    </h1> 
+ <rolcomponent></rolcomponent>
 </template>
 
 <template v-if="menu==2">
@@ -25,9 +23,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 </template>
 
 <template v-if="menu==4">
-  <h1>
-    menu4
-  </h1> 
+ <categoriascomponent></categoriascomponent>
 </template>
 
 <template v-if="menu==5">

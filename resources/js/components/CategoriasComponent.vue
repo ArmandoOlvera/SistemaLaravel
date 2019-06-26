@@ -267,8 +267,7 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.value) {
-   let me = this;
-
+              let me = this;
                     axios.put('/categoria/desactivar',{
                         'id': id
                     }).then(function (response) {
@@ -288,13 +287,60 @@ swalWithBootstrapButtons.fire({
     result.dismiss === Swal.DismissReason.cancel
   ) {
     swalWithBootstrapButtons.fire(
-      'Cancelled',
-      'Your imaginary file is safe :)',
+      'Cancelado!',
+      'No ser realizo ningun cambio',
       'error'
     )
   }
 })
             },
+             activarCategoria(id){
+               const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false,
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Estas seguro de activar la categoria?',
+ 
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Aceptar',
+  cancelButtonText: 'Cancelar',
+  reverseButtons: true
+}).then((result) => {
+  if (result.value) {
+              let me = this;
+                    axios.put('/categoria/activar',{
+                        'id': id
+                    }).then(function (response) {
+                        me.listarCategoria();
+                        swal(
+                        'Desactivado!',
+                        'El registro ha sido desactivado con éxito.',
+                        'success'
+                        )
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                    
+    
+  } else if (
+    // Read more about handling dismissals
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'CAncelado',
+      'No se realizo ningun cambio',
+      'error'
+    )
+  }
+})
+            }
+            ,
             validarCategoria(){
                 this.errorCategoria=0;
                 this.errorMostrarMsjCategoria =[];

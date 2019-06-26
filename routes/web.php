@@ -61,11 +61,11 @@ Route::put('/categoria/actualizar','categoriacontroller@update');
 
 
 //RUTA QUE HACE REFERENCIA A METODO PUT DE CATEGORIAS PARA actualizær DATOS y desactivar la fila
-Route::put('/categoria/desactivar','categoriacontroller@update');
+Route::put('/categoria/desactivar','categoriacontroller@desactivar');
 
 
 //RUTA QUE HACE REFERENCIA A METODO PUT DE CATEGORIAS PARA actualizær DATOS y avticar la fila
-Route::put('/categoria/activar','categoriacontroller@update');
+Route::put('/categoria/activar','categoriacontroller@activar');
 
 
 

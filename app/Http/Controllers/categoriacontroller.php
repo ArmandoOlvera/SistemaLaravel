@@ -19,6 +19,17 @@ class categoriacontroller extends Controller
       return $categorias;
     }
 
+    public function selectCategoria(Request $request)
+    {
+      //SE listan todos los registros de la tabla categoria
+      $categorias = Categoria::where('condicion','=','1')
+       ->select('id','nombre')->orderBy('nombre', 'asc')->get();
+      
+        return ['categorias' => $categorias];
+      
+    }
+
+  
    public function store(Request $request)
     {
         //Instancia que sirve para acceder a cada una de las propiedades de la clase categoria para guardar datos del objeto Request
@@ -64,6 +75,8 @@ class categoriacontroller extends Controller
         $catgoria->condicion = '1';
         $catgoria->save();
     }
+  
+  
   
     /**
      * Show the form for creating a new resource.

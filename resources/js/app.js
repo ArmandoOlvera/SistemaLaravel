@@ -30,6 +30,12 @@ Vue.component('personascomponent', require('./components/PersonasComponent.vue')
  
 //Enlace del componente de rol a su respectiva etiqueta
 Vue.component('rolcomponent', require('./components/RolComponent.vue').default);
+
+//Enlace del componente de articulo a su respectiva etiqueta
+Vue.component('articulocomponent', require('./components/ArticuloComponent.vue').default);
+
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

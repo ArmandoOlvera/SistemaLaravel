@@ -104,8 +104,9 @@ class CreateRolTable extends Migration
            $table->integer('stock');
           
             $table->string('descripcion',250);
-           $table->timestamps();
+        
            $table->boolean('condicion')->default(1);
+           $table->timestamps();
           $table->foreign('idcategoria')->references('id')->on('categoria')->onDelete('cascade');
         
         });

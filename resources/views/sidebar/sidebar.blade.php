@@ -28,10 +28,10 @@
         </ul>
       </li>
       <li class="nav-item nav-dropdown">
-        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-basket"></i> Usuarios</a>
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-basket"></i> Articulos</a>
         <ul class="nav-dropdown-items">
           <li class="nav-item">
-            <a @click="menu=3" class="nav-link"  ><i class="icon-basket-loaded"></i> Ver Usuarios</a>
+            <a @click="menu=3" class="nav-link"  ><i class="icon-basket-loaded"></i> Ver Articulos</a>
           </li>
        
         </ul>

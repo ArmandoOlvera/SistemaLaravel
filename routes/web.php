@@ -93,24 +93,54 @@ Route::put('/persona/desactivar','personacontroller@desactivar');
 
 ///SECCION PARA ROLES
 
-//RUTA QUE NOS GUIA A LA PANTALLA DE PERSONAS
+//RUTA QUE NOS GUIA A LA PANTALLA DE roles
 Route::get('/rol','rolcontroller@index');
 
 
-//RUTA QUE HACE REFERENCIA A METODO POST DE PERSONAS PARA GUARDAR DATOS
+//RUTA QUE HACE REFERENCIA A METODO POST DE roles PARA GUARDAR DATOS
 Route::post('/rol/registrar','rolcontroller@store');
 
 
-//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS
+//RUTA QUE HACE REFERENCIA A METODO PUT DE roles PARA actualizær DATOS
 Route::put('/rol/actualizar','rolcontroller@update');
 
 
-//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y desactivar la fila
+//RUTA QUE HACE REFERENCIA A METODO PUT DE roles PARA actualizær DATOS y desactivar la fila
 Route::put('/rol/desactivar','rolcontroller@desactivar');
 
 
-//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y avticar la fila
+//RUTA QUE HACE REFERENCIA A METODO PUT DE roles PARA actualizær DATOS y avticar la fila
 Route::put('/rol/activar','rolcontroller@activar');
+
+
+
+//SECCION PARA ARTICULOS
+
+//RUTA QUE NOS GUIA A LA PANTALLA DE ARTICULOS
+Route::get('/articulo','articulocontroller@index');
+
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE ARTICULOS PARA GUARDAR DATOS
+Route::post('/articulo/registrar','articulocontroller@store');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE ARTICULOS PARA actualizær DATOS
+Route::put('/articulo/actualizar','articulocontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE ARTICULOS PARA actualizær DATOS y desactivar la fila
+Route::put('/articulo/desactivar','articulocontroller@desactivar');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE ARTICULOS PARA actualizær DATOS y avticar la fila
+Route::put('/articulo/activar','articulocontroller@activar');
+
+
+
+//RUTA QUE NOS da los datos de las categorias existentes
+Route::get('/categoria/selectCategoria','categoriacontroller@selectCategoria');
+
+
 
 
 ////Otras rutas no importantes..../////

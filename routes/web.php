@@ -68,10 +68,49 @@ Route::put('/categoria/desactivar','categoriacontroller@desactivar');
 Route::put('/categoria/activar','categoriacontroller@activar');
 
 
+///SECCION PARA PERSONAS
+
+//RUTA QUE NOS GUIA A LA PANTALLA DE PERSONAS
+Route::get('/persona','personacontroller@index');
+
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE PERSONAS PARA GUARDAR DATOS
+Route::post('/persona/registrar','personacontroller@store');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS
+Route::put('/persona/actualizar','personacontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y desactivar la fila
+Route::put('/persona/desactivar','personacontroller@desactivar');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y avticar la fila
+//Route::put('/persona/activar','personacontroller@activar');
 
 
 
+///SECCION PARA ROLES
 
+//RUTA QUE NOS GUIA A LA PANTALLA DE PERSONAS
+Route::get('/rol','rolcontroller@index');
+
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE PERSONAS PARA GUARDAR DATOS
+Route::post('/rol/registrar','rolcontroller@store');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS
+Route::put('/rol/actualizar','rolcontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y desactivar la fila
+Route::put('/rol/desactivar','rolcontroller@desactivar');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PERSONAS PARA actualizær DATOS y avticar la fila
+Route::put('/rol/activar','rolcontroller@activar');
 
 
 ////Otras rutas no importantes..../////

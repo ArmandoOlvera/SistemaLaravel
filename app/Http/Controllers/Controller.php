@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 //Mandamos a llamar al controlador de categorias para sus funcionalidades
 use App\Categoria;
+use App\Persona;
 
 
 

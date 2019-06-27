@@ -10,7 +10,7 @@
                 <!-- Ejemplo de tabla Listado -->
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Roles
+                        <i class="fa fa-align-justify"></i> Personas
                         <button type="button" @click="abrirModal('categoria','registrar')" class="btn btn-secondary">
                             <i class="icon-plus"></i>&nbsp;Nuevo
                         </button>
@@ -29,45 +29,36 @@
                             </div>
                         </div>
                         <table class="table table-bordered table-striped table-sm">
-                            <thead>
+                             <thead>
                                 <tr>
-                                    <th>Opciones</th>
+                                   <th>Opciones</th>
                                     <th>Nombre</th>
-                                    <th>Descripción</th>
-                                    <th>Estado</th>
+                                    <th>Tipo Documento</th>
+                                    <th>Num Documento</th>
+                                    <th>DIreccion</th>
+                                    <th>Telefono</th>
+                                    <th>Emai </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="rol in arrayCategoria" :key="rol.id">
+                              <!--Muestreo de datos de las personas-->
+                                <tr v-for="persona in arrayPersona" :key="persona.id">
                                     <td>
                                     <!--Aqui llamamos al modal con los parametros de actualizar mandando asi tambien el objeto de la clase a modificar-->
-                                        <button type="button" @click="abrirModal('categoria','actualizar',rol)" class="btn btn-warning btn-sm">
+                                        <button type="button" @click="abrirModal('categoria','actualizar',persona)" class="btn btn-warning btn-sm">
                                           <i class="icon-pencil"></i>
                                         </button> &nbsp;
-                                        
-                                        <template v-if="rol.estado">
-                                            <button type="button" class="btn btn-danger btn-sm" @click="desactivarCategoria(rol.id)">
+                                     <button type="button" class="btn btn-danger btn-sm" @click="desactivarPersona(persona.id)">
                                                 <i class="icon-trash"></i>
                                             </button>
-                                        </template>
-                                    <template v-else>
-                                            <button type="button" class="btn btn-info btn-sm" @click="activarCategoria(rol.id)">
-                                                <i class="icon-check"></i>
-                                            </button>
-                                        </template>
-                                    
-                                    </td> 
-                                    <td v-text="rol.nombre"></td>
-                                    <td v-text="rol.descripcion"></td>
-                                    <td>
-                                        <div v-if="rol.estado">
-                                            <span class="badge badge-success">Activo</span>
-                                        </div>
-                                        <div v-else>
-                                            <span class="badge badge-danger">Desactivado</span>
-                                        </div>
-                                        
                                     </td>
+                                    <td v-text="persona.nombre"></td>
+                                    <td v-text="persona.tipo_documento"></td>
+                                    <td v-text="persona.num_documento"></td>
+                                    <td v-text="persona.direccion"></td>
+                                    <td v-text="persona.telefono"></td>
+                                    <td v-text="persona.email"></td>
+                                     
                                 </tr>                                
                             </tbody>
                         </table>
@@ -116,18 +107,56 @@
                                     <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
                                     <div class="col-md-9">
                                     
-                                        <input type="text" v-model="nombre" class="form-control" placeholder="Nombre de categoría">
+                                        <input type="text" v-model="nombre" class="form-control" placeholder="Nombre de la persona">
                                         
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
+                                    <label class="col-md-3 form-control-label" for="email-input">Tipo Documento</label>
                                     <div class="col-md-9">
                                     
-                                        <input type="email" v-model="descripcion" class="form-control" placeholder="Ingrese descripción">
+                                        <input type="text" v-model="tipo_documento" class="form-control" placeholder="Ingrese tipo de documento">
                                         
                                     </div>
                                 </div>
+                              
+                              <div class="form-group row">
+                                    <label class="col-md-3 form-control-label" for="email-input">Numero Documento</label>
+                                    <div class="col-md-9">
+                                    
+                                        <input type="text" v-model="num_documento" class="form-control" placeholder="Ingrese el numero de documento">
+                                        
+                                    </div>
+                                </div>
+                              
+                               <div class="form-group row">
+                                    <label class="col-md-3 form-control-label" for="email-input">Direccion</label>
+                                    <div class="col-md-9">
+                                    
+                                        <input type="text" v-model="direccion" class="form-control" placeholder="Ingrese la Direccion">
+                                        
+                                    </div>
+                                </div>
+                              
+                               <div class="form-group row">
+                                    <label class="col-md-3 form-control-label" for="email-input">Numero de Telefono</label>
+                                    <div class="col-md-9">
+                                    
+                                        <input type="text" v-model="telefono" class="form-control" placeholder="Ingrese telefono">
+                                        
+                                    </div>
+                                </div>
+                              
+                               <div class="form-group row">
+                                    <label class="col-md-3 form-control-label" for="email-input">Email</label>
+                                    <div class="col-md-9">
+                                    
+                                        <input type="email" v-model="email" class="form-control" placeholder="Ingrese el correo electronico">
+                                        
+                                    </div>
+                                </div>
+                              
+                              
                                 <div v-show="errorCategoria" class="form-group row div-error">
                                     <div class="text-center text-error">
                                         <div v-for="error in errorMostrarMsjCategoria" :key="error" v-text="error">
@@ -141,9 +170,9 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" @click="cerrarModal()">Cerrar</button>
                             <br>
-                            <button type="button" v-if="tipoAccion==1" class="btn btn-primary" @click="registrarCategoria()">Guardar</button>
+                            <button type="button" v-if="tipoAccion==1" class="btn btn-primary" @click="registrarPersona()">Guardar</button>
                            <br>
-                           <button type="button" v-if="tipoAccion==2" class="btn btn-primary" @click="actualizarCategoria()">Actualizar</button>
+                           <button type="button" v-if="tipoAccion==2" class="btn btn-primary" @click="actualizarPersona()">Actualizar</button>
                         </div>
                     </div>
                     <!-- /.modal-content -->
@@ -182,9 +211,13 @@
         data (){
             return {
             categoria_id:0,
-                nombre : '',
-                descripcion : '',
-                arrayCategoria : [],
+               nombre : '',
+                tipo_documento : '',
+                num_documento:'',
+                direccion:'',
+                telefono:'',
+                email:'',
+                arrayPersona : [],
                 modal : 0,
                 tituloModal : '',
                 tipoAccion : 0,
@@ -193,62 +226,71 @@
             }
         },
         methods : {
-            listarCategoria (){
+            listarPersona (){
                 let me=this;
-                axios.get('/rol').then(function (response) {
-                    me.arrayCategoria = response.data;
+                axios.get('/persona').then(function (response) {
+                    me.arrayPersona = response.data;
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
             },
-            registrarCategoria(){
+            registrarPersona(){
             //Para enviar parametros por medio del metodo POST trabajamos con axios las siguientes dependencias
             //estos deben de estar definidos en nustro archivo web.php que tenga el enlace que haga referencia al metodo store del controlador que se use en cuestion
              //CUando se realiza un insertado de datos, se espera que se cierre el modal y se actualizen los datos, por lo que 
-             //se manda llamar el metodo listarcategoria para refrescar los datos
+             //se manda llamar el metodo listarPersona para refrescar los datos
               if (this.validarCategoria()){
                     return;
                 }
                 
                 let me = this;
 
-                axios.post('/rol/registrar',{
-                    'nombre': this.nombre,
-                    'descripcion': this.descripcion
+                axios.post('/persona/registrar',{ 
+                   'nombre': this.nombre,
+                    'tipo_documento': this.tipo_documento,
+                  'num_documento': this.num_documento,
+                  'direccion' : this.direccion,
+                  'telefono' : this.telefono,
+                  'email' : this.email
                 }).then(function (response) {
                     me.cerrarModal();
-                    me.listarCategoria();
+                    me.listarPersona();
                 }).catch(function (error) {
                     console.log(error);
                 });
             },
-            actualizarCategoria(){
-            //SE valida los campos obligatorios
-             
+            actualizarPersona(){
                  //Para enviar parametros por medio del metodo POST trabajamos con axios las siguientes dependencias
             //estos deben de estar definidos en nustro archivo web.php que tenga el enlace que haga referencia al metodo store del controlador que se use en cuestion
                  
              //CUando se realiza un insertado de datos, se espera que se cierre el modal y se actualizen los datos, por lo que 
-             //se manda llamar el metodo listarcategoria para refrescar los datos
+             //se manda llamar el metodo listarPersona para refrescar los datos
+              
+               //SE validan los campos obligatorios 
                     if (this.validarCategoria()){
-                    return;
-                }
+                         return;
+                     }
                 
                 let me = this;
 
-                axios.put('/rol/actualizar',{
-                  'id': this.categoria_id,
+                axios.put('/persona/actualizar',{
+                  
                    'nombre': this.nombre,
-                    'descripcion': this.descripcion
+                    'tipo_documento': this.tipo_documento,
+                  'num_documento': this.num_documento,
+                  'direccion' : this.direccion,
+                  'telefono' : this.telefono,
+                    'id': this.categoria_id,
+                  'email' : this.email
                 }).then(function (response) {
                    me.cerrarModal();
-                    me.listarCategoria();
+                    me.listarPersona();
                 }).catch(function (error) {
                     console.log(error);
                 }); 
             }, 
-            desactivarCategoria(id){
+            desactivarPersona(id){
                const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success',
@@ -258,7 +300,7 @@
 })
 
 swalWithBootstrapButtons.fire({
-  title: 'Estas seguro de desactivar el rol?',
+  title: 'Estas seguro de BORRAR la persona?',
  
   type: 'warning',
   showCancelButton: true,
@@ -267,13 +309,11 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.value) {
-    
               let me = this;
-    
-                    axios.put('/rol/desactivar',{
+                    axios.put('/persona/desactivar',{
                         'id': id
                     }).then(function (response) {
-                        me.listarCategoria();
+                        me.listarPersona();
                         swal(
                         'Desactivado!',
                         'El registro ha sido desactivado con éxito.',
@@ -297,7 +337,6 @@ swalWithBootstrapButtons.fire({
 })
             },
              activarCategoria(id){
-                
                const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success',
@@ -307,20 +346,20 @@ swalWithBootstrapButtons.fire({
 })
 
 swalWithBootstrapButtons.fire({
-        title: 'Estas seguro de activar el rol?',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Aceptar',
-        cancelButtonText: 'Cancelar',
-        reverseButtons: true
-      }).then((result) => { 
-        if (result.value) { 
-                     //   let me2 = this;
-                    axios.put('/rol/activar',{
+  title: 'Estas seguro de activar la categoria?',
+ 
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Aceptar',
+  cancelButtonText: 'Cancelar',
+  reverseButtons: true
+}).then((result) => {
+  if (result.value) {
+              let me = this;
+                    axios.put('/persona/activar',{
                         'id': id
                     }).then(function (response) {
-                      
-                      //  me2.listarCategoria();
+                        me.listarPersona();
                         swal(
                         'Desactivado!',
                         'El registro ha sido desactivado con éxito.',
@@ -342,14 +381,23 @@ swalWithBootstrapButtons.fire({
     )
   }
 })
-            },
+            }
+            ,
             validarCategoria(){
                 this.errorCategoria=0;
                 this.errorMostrarMsjCategoria =[];
 
-                if (!this.nombre) this.errorMostrarMsjCategoria.push("El nombre del rol no puede estar vacío, porfavor ingrese uno.");
+                if (!this.nombre) this.errorMostrarMsjCategoria.push("El nombre de la persona no puede estar vacío, porfavor ingrese uno.");
                 
-                if (!this.descripcion) this.errorMostrarMsjCategoria.push("La descripcion del rol no puede estar vacío, porfavor ingrese una.");
+                if (!this.tipo_documento) this.errorMostrarMsjCategoria.push("EL tipo de documento de la persona no puede estar vacío, porfavor ingrese una.");
+
+              if (!this.num_documento) this.errorMostrarMsjCategoria.push("EL numero de documento de la persona no puede estar vacío, porfavor ingrese una.");
+
+               if (!this.direccion) this.errorMostrarMsjCategoria.push("La direccion de la persona no puede estar vacío, porfavor ingrese una.");
+
+               if (!this.telefono) this.errorMostrarMsjCategoria.push("EL telefono   de la persona no puede estar vacío, porfavor ingrese una.");
+
+              if (!this.email) this.errorMostrarMsjCategoria.push("EL email de la persona no puede estar vacío, porfavor ingrese una.");
 
                 if (this.errorMostrarMsjCategoria.length) this.errorCategoria = 1;
 
@@ -369,20 +417,33 @@ swalWithBootstrapButtons.fire({
                             case 'registrar':
                             {
                                 this.modal = 1;
-                                this.tituloModal = 'Registrar Rol';
+                                this.tituloModal = 'Registrar Persona';
                                 this.nombre= '';
-                                this.descripcion = '';
+                                this.tipo_documento = '';
+                              this.num_documento = '';
+                              this.telefono = '';
+                              this.email = '';
+                              this.direccion = '';
                                 this.tipoAccion = 1;
+                              this.errorMostrarMsjCategoria=[];
+                               
                                 break;
                             }
                             case 'actualizar':
                             {
                                 this.modal=1;
-                                this.tituloModal="Actualizar Rol";
+                                this.tituloModal="Actualizar Persona";
                                 this.tipoAccion=2;
-                                this.nombre=data['nombre'];
-                                this.categoria_id=data['id'];
-                                this.descripcion=data['descripcion'];
+                               this.categoria_id=data['id'];
+                              console.log(data['id']);
+                                 this.nombre= data['nombre'];
+                                this.tipo_documento = data['tipo_documento'];
+                              this.num_documento = data['num_documento'];
+                              this.telefono = data['telefono'];
+                              this.email = data['email'];
+                              this.direccion = data['direccion'];
+                              this.errorMostrarMsjCategoria=[];
+                                 
                                 break;
                             }
                         }
@@ -391,7 +452,7 @@ swalWithBootstrapButtons.fire({
             }
         },
         mounted() {
-            this.listarCategoria();
+            this.listarPersona();
         }
     }
 </script>

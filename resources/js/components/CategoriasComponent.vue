@@ -379,7 +379,7 @@ swalWithBootstrapButtons.fire({
                                 this.tituloModal="Actualizar CAtegoria";
                                 this.tipoAccion=2;
                                 this.nombre=data['nombre'];
-                                this.categoria_id=data['id']
+                                this.categoria_id=data['id'];
                                 this.descripcion=data['descripcion'];
                                 break;
                             }

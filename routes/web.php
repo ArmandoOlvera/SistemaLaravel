@@ -172,13 +172,13 @@ Route::put('/proveedor/desactivar','proveedorcontroller@desactivar');
 //Route::put('/persona/activar','personacontroller@activar');
 
 //SECCION PARA INGRESOS
-//RUTA QUE NOS GUIA A LA PANTALLA DE PROVEEDORES
+//RUTA QUE NOS GUIA A LA PANTALLA DE INGRESOS
 Route::get('/ingreso','IngresoController@index');
 
-//RUTA QUE HACE REFERENCIA A METODO POST DE PROVEEDORES PARA GUARDAR DATOS
+//RUTA QUE HACE REFERENCIA A METODO POST DE INGRESOS PARA GUARDAR DATOS
 Route::post('/ingreso/registrar','IngresoController@store');
 
-//RUTA QUE HACE REFERENCIA A METODO PUT DE PROVEEDORES PARA actualizær DATOS y desactivar la fila
+//RUTA QUE HACE REFERENCIA A METODO PUT DE INGRESOS PARA actualizær DATOS y desactivar la fila
 Route::put('/ingreso/desactivar','IngresoController@desactivar');
 
 ////Otras rutas no importantes..../////

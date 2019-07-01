@@ -59,6 +59,6 @@ class IngresoController extends Controller
  
         $Ingreso = Ingreso::findOrFail($request->id);
         $Ingreso->estado='Anulado';
-        $Ingreso  ->save();
+        $Ingreso->save();
     }
 }

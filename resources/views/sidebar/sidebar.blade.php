@@ -45,6 +45,28 @@
         </ul>
       </li>
       <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Proveedores</a>
+        <ul class="nav-dropdown-items">
+          <li  class="nav-item">
+            <a @click="menu=5"  class="nav-link  "><i class="icon-user"></i>Ver Proveedores</a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Ingresos</a>
+        <ul class="nav-dropdown-items">
+          <li  class="nav-item">
+            <a @click="menu=6"  class="nav-link  "><i class="icon-user"></i>Ver Ingresos</a>
+          </li>
+        </ul>
+      </li>
+      
+      
+      
+      <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i> Reportes</a>
         <ul class="nav-dropdown-items">
           <li class="nav-item">

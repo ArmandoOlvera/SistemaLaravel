@@ -321,95 +321,95 @@
             }, 
             desactivarCategoria(id){
                const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false,
-})
+              customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+              },
+              buttonsStyling: false,
+            })
 
-swalWithBootstrapButtons.fire({
-  title: 'Estas seguro de desactivar el articulo?',
- 
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Aceptar',
-  cancelButtonText: 'Cancelar',
-  reverseButtons: true
-}).then((result) => {
-  if (result.value) {
-              let me = this;
-                    axios.put('/articulo/desactivar',{
-                        'id': id
-                    }).then(function (response) {
-                        me.listarArticulo();
-                        swal(
-                        'Desactivado!',
-                        'El registro ha sido desactivado con éxito.',
-                        'success'
-                        )
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
-                    
-    
-  } else if (
-    // Read more about handling dismissals
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'Cancelado!',
-      'No ser realizo ningun cambio',
-      'error'
-    )
-  }
-})
+            swalWithBootstrapButtons.fire({
+              title: 'Estas seguro de desactivar el articulo?',
+
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Aceptar',
+              cancelButtonText: 'Cancelar',
+              reverseButtons: true
+            }).then((result) => {
+              if (result.value) {
+                          let me = this;
+                                axios.put('/articulo/desactivar',{
+                                    'id': id
+                                }).then(function (response) {
+                                    me.listarArticulo();
+                                    swal(
+                                    'Desactivado!',
+                                    'El registro ha sido desactivado con éxito.',
+                                    'success'
+                                    )
+                                }).catch(function (error) {
+                                    console.log(error);
+                                });
+
+
+              } else if (
+                // Read more about handling dismissals
+                result.dismiss === Swal.DismissReason.cancel
+              ) {
+                swalWithBootstrapButtons.fire(
+                  'Cancelado!',
+                  'No ser realizo ningun cambio',
+                  'error'
+                )
+              }
+            })
             },
              activarCategoria(id){
                const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false,
-})
+                customClass: {
+                  confirmButton: 'btn btn-success',
+                  cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false,
+              })
 
-swalWithBootstrapButtons.fire({
-  title: 'Estas seguro de activar el articulo?',
- 
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Aceptar',
-  cancelButtonText: 'Cancelar',
-  reverseButtons: true
-}).then((result) => {
-  if (result.value) {
-              let me = this;
-                    axios.put('/articulo/activar',{
-                        'id': id
-                    }).then(function (response) {
-                        me.listarArticulo();
-                        swal(
-                        'Desactivado!',
-                        'El registro ha sido desactivado con éxito.',
-                        'success'
-                        )
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
-                    
-    
-  } else if (
-    // Read more about handling dismissals
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'CAncelado',
-      'No se realizo ningun cambio',
-      'error'
-    )
-  }
-})
+              swalWithBootstrapButtons.fire({
+                title: 'Estas seguro de activar el articulo?',
+
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Aceptar',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+              }).then((result) => {
+                if (result.value) {
+                            let me = this;
+                                  axios.put('/articulo/activar',{
+                                      'id': id
+                                  }).then(function (response) {
+                                      me.listarArticulo();
+                                      swal(
+                                      'Desactivado!',
+                                      'El registro ha sido desactivado con éxito.',
+                                      'success'
+                                      )
+                                  }).catch(function (error) {
+                                      console.log(error);
+                                  });
+
+
+                } else if (
+                  // Read more about handling dismissals
+                  result.dismiss === Swal.DismissReason.cancel
+                ) {
+                  swalWithBootstrapButtons.fire(
+                    'CAncelado',
+                    'No se realizo ningun cambio',
+                    'error'
+                  )
+                }
+              })
             }
             ,
             validarArticulo(){
@@ -453,21 +453,21 @@ swalWithBootstrapButtons.fire({
                                 this.modal = 1;
                                 this.tituloModal = 'Registrar Categoría';
                                 this.idcategoria=0;
-              this.nombre_categoria='';
-              this.codigo='';
-              this.errorArticulo=0;
-              this.precio_venta=0;
-              this.stock=0;
-                this.nombre='';
-                this.descripcion='';
-                                this.tipoAccion = 1;
-                              this.nombre_categoria='';
-              this.codigo='';
-              this.errorArticulo=0;
-              this.precio_venta=0;
-              this.stock=0;
-                this.nombre='';
-                this.descripcion='';
+                            this.nombre_categoria='';
+                            this.codigo='';
+                            this.errorArticulo=0;
+                            this.precio_venta=0;
+                            this.stock=0;
+                              this.nombre='';
+                              this.descripcion='';
+                                              this.tipoAccion = 1;
+                                            this.nombre_categoria='';
+                            this.codigo='';
+                            this.errorArticulo=0;
+                            this.precio_venta=0;
+                            this.stock=0;
+                              this.nombre='';
+                              this.descripcion='';
                                this.selectCategoria();
                                 break;
                             }

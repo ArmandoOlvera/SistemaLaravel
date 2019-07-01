@@ -17,6 +17,24 @@ class articulocontroller extends Controller
       return $articulo;
     }
   
+  public function buscarArticulo(Request $request){
+    $filtro = $request->filtro;
+    $articulos = Articulo::where('codigo','=',$filtro)
+      ->select('id','nombre')->take(1)->get();
+    
+    return ['articulos' => $articulos];
+  }
+  
+  //Funcion para retornar la lista de articulos para la compra
+  public function listarArticulo()
+    { 
+      //SE listan todos los registros de la tabla categoria
+      $articulo = Articulo::join('categoria','articulo.idcategoria','=','categoria.id')
+       ->select('articulo.id','articulo.idcategoria','articulo.codigo','articulo.nombre','categoria.nombre as nombre_categoria','articulo.precio_venta','articulo.stock','articulo.descripcion','articulo.condicion') 
+       ->get();
+      return ['articulos' => $articulo];
+    }
+  
   
   public function store(Request $request)
     {

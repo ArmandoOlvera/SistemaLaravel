@@ -34,6 +34,12 @@ Vue.component('rolcomponent', require('./components/RolComponent.vue').default);
 //Enlace del componente de articulo a su respectiva etiqueta
 Vue.component('articulocomponent', require('./components/ArticuloComponent.vue').default);
 
+//Enlace del componente de proveedor a su respectiva etiqueta
+Vue.component('proveedorcomponent', require('./components/ProveedorComponent.vue').default);
+
+//Enlace del componente de proveedor a su respectiva etiqueta
+Vue.component('ingresocomponent', require('./components/IngresoComponent.vue').default);
+
 
 
 /**

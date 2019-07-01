@@ -121,7 +121,13 @@ Route::get('/articulo','articulocontroller@index');
 
 
 //RUTA QUE HACE REFERENCIA A METODO POST DE ARTICULOS PARA GUARDAR DATOS
+Route::get('/articulo/buscarArticulo','articulocontroller@buscarArticulo');
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE ARTICULOS PARA GUARDAR DATOS
 Route::post('/articulo/registrar','articulocontroller@store');
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE ARTICULOS PARA GUARDAR DATOS
+Route::post('/articulo/listarArticulo','articulocontroller@listarArticulo');
 
 
 //RUTA QUE HACE REFERENCIA A METODO PUT DE ARTICULOS PARA actualizær DATOS
@@ -141,7 +147,39 @@ Route::put('/articulo/activar','articulocontroller@activar');
 Route::get('/categoria/selectCategoria','categoriacontroller@selectCategoria');
 
 
+///SECCION PARA PROVEEDORES
 
+//RUTA QUE NOS GUIA A LA PANTALLA DE PROVEEDORES
+Route::get('/proveedor','proveedorcontroller@index');
+
+//RUTA QUE NOS OBTIENE LOS DATOS DE PROVEDORES PARA LAS VENTAS
+Route::get('/proveedor/selectProveedor','proveedorcontroller@selectProveedor');
+
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE PROVEEDORES PARA GUARDAR DATOS
+Route::post('/proveedor/registrar','proveedorcontroller@store');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PROVEEDORES PARA actualizær DATOS
+Route::put('/proveedor/actualizar','proveedorcontroller@update');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PROVEEDORES PARA actualizær DATOS y desactivar la fila
+Route::put('/proveedor/desactivar','proveedorcontroller@desactivar');
+
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PROVEEDORES PARA actualizær DATOS y avticar la fila
+//Route::put('/persona/activar','personacontroller@activar');
+
+//SECCION PARA INGRESOS
+//RUTA QUE NOS GUIA A LA PANTALLA DE PROVEEDORES
+Route::get('/ingreso','IngresoController@index');
+
+//RUTA QUE HACE REFERENCIA A METODO POST DE PROVEEDORES PARA GUARDAR DATOS
+Route::post('/ingreso/registrar','IngresoController@store');
+
+//RUTA QUE HACE REFERENCIA A METODO PUT DE PROVEEDORES PARA actualizær DATOS y desactivar la fila
+Route::put('/ingreso/desactivar','IngresoController@desactivar');
 
 ////Otras rutas no importantes..../////
 Route::get('/Principal', function () {

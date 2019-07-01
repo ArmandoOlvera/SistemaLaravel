@@ -23,15 +23,11 @@
 </template>
 
 <template v-if="menu==5">
-  <h1>
-    menu5
-  </h1> 
+ <proveedorcomponent></proveedorcomponent> 
 </template>
 
 <template v-if="menu==6">
-  <h1>
-    menu6
-  </h1> 
+  <ingresocomponent></ingresocomponent> 
 </template>
 
 <template v-if="menu==7">
